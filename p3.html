@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>드라마 리뷰홈</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"> 
+<style>
+	*{margin:0; padding:0;}
+	html, body{width:100%; height:100%;}
+	ol,ul{list-style:none;}
+	.sh{position:absolute; left:0; top:0; z-index:-1; background-color:#000; display:none;}
+	header {position:relative;}
+	header h1{position:absolute; top:0; left:-15%; transform:translate(0,-30%); }
+	
+	
+	.main{ width:50%; height:100%; position:relative;  left:60%;}
+	.second{width:45%; height:100%; position:absolute; top:0; right:-25%; background-color:white;}
+	.second .menu{position:absolute; display:block; width:52px; height:132px; margin:0; padding:0; border:none; cursor:pointer; top:5%; right:100%; font-size:36px; transform:translate(5%,40%);}
+/*	.second .menu .close{position:absolute; left:40%; top:10%; width:500px; height:500px;}
+	.second .menu .close .fa-times{font-size:36px;}*/
+	.second ul{list-style:none; padding:0; position:absolute; right:50%; top:50px;}
+	.second ul li{margin-bottom:20px;}
+	.second ul li:hover{transform:skew(15deg);}
+	.second ul li a{font-size:24px; color:#ee82ee; font-weight:bold;}
+	.second ul li a{text-decoration:none;}
+	.menuSns{ width:400px; position:absolute; top:25%; left:0; z-index:5000;}
+	.menuSns ul{float:right;}
+	.menuSns ul li{list-style:none; float:left; margin-right:10px;}
+	.menuSns ul li:hover{transform:scale(1.5);}
+	.menuSns ul li a{text-decoration:none; clear:both; }
+	.menuSns .fa-facebook{font-size:36px;}
+	.menuSns .fa-instagram{font-size:36px;}
+	.menuSns .fa-youtube{font-size:36px;}
+	.player{width:240px; height:300px; position:absolute; top:100px; left:30%; transform:translate(-50%,0); margin-top:20px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+<script>
+	$(function(){
+		$.backstretch(['img/p3/q1.png','img/p3/t5.jpg','img/p3/q2.png','img/p3/q3.png'],
+		{duration:4000, fade:600});
+	});
+	$(function(){
+		
+		var duration = 300;
+		var second = $('.main .second');
+		var secondButton = $('.main .second .menu');
+		var closeButton = $('.main .second .close');
+		
+		secondButton.on('click',function(){
+			second.toggleClass('open');
+			if(second.hasClass('open')){
+				second.stop().animate({right:0},duration,'easeOutExpo');	
+			}else{
+				second.stop().animate({right:'-25%'},duration,'easeOutExpo');
+			};
+		});
+		
+		function sh() {
+			var shHeight = $(document).height();
+			var shWidth = $(document).width();
+			
+			$('.sh').css({'width':shWidth, 'height':shHeight});
+			$('.sh').stop().fadeTo('slow',0.7);	
+			}
+		
+		$('.main').on('mouseenter',function(){
+			sh();
+			});
+		
+		$('.main').on('mouseleave',function(){
+			$('.sh').stop().fadeOut('slow')
+			});
+		
+	});
+</script>
+</head>
+
+<body>
+    <div class="sh"></div>
+	<header>
+    	<h1><img src="img/p3/logo.png" alt="로고"></h1>
+    </header>
+    
+    <div class="main">
+    	<div class ="second">
+        <div class="menu"><i class="fas fa-bars"></i></div>
+      <!--<div class="close"><i class="fas fa-times"></i></div>-->
+        	<ul>
+            	<li><a href="#">오늘의 드라마</a></li>
+	        	<li><a href="#">상반기 드라마</a></li>
+	        	<li><a href="#">하반기 드라마</a></li>
+	        	<li><a href="#">드라마 리뷰</a></li>
+            </ul>
+        <div class="menuSns">
+	        	<ul>
+	        	<li><a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook "></i></a></li>
+            	<li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram "></i></a></li>
+            	<li><a href="http://www.youtube.com" target="_blank"><i class="fab fa-youtube "></i></a></li>
+	        	</ul>
+        <div class="player">
+		<iframe width="240" height="300" src="https://www.youtube.com/embed/jG3npsEjFvk?mute=1&loop=1&autoplay=1" frameborder="0"  allowfullscreen></iframe>
+        </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

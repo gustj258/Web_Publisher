@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>베스트 일레븐</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"> 
+<link rel="stylesheet" href="slick/slick.css">
+<link rel="stylesheet" href="slick/slick-theme.css">
+<style>
+	*{margin:0; padding:0; box-sizing:border-box; }
+	html, body{width:100%; height:100%; bottom-margin:0;}
+	ol,ul{list-style:none;}
+	a{outline:0; text-decoration:none; color:#bbb;}
+	img{border:0;}
+	.sh{position:absolute; left:0; top:0; z-index:9000; background-color:#000; display:none;}
+	
+	h1{width:400px; position:absolute; top:-8%; left:17.5%; z-index:9001; }
+	h1 img{width:100%; height:auto;}
+	
+	
+	.slider{width:960px; margin:100px auto; position:absolute; top:0; left:25%;}
+	.slick-slide img{width:100%;}
+	.slick-prev, .slick-next{position:absolute; z-index:8999;}
+	.slick-prev{left:20px; }
+	.slick-next{right:20px;}
+
+	header ul{position:absolute; top:60px; right:30px; z-index:2;}
+	header ul li{float:left; margin-right:10px; opacity:0.5; transition:all 0.4s;}
+	header ul li:hover{opacity:1; transform:scale(1.2);}
+	header ul .fa-facebook{font-size:30px; color:gray;}
+	header ul .fa-instagram{font-size:30px; color:gray;}
+	header ul .fa-youtube{font-size:30px; color:gray;}
+	
+	nav{width:100%; height:50px; position:absolute; z-index:3; top:420px; left:0px; z-index:9001;}
+	nav>ul{width:960px; height:50px; margin:0 auto;}
+	nav>ul>li {width:240px; height:50px; float:left; text-align:center; box-sizing:border-box; position:relative; perspective:700px;}
+	nav>ul>li>a{display:block; width:200px; height:50px; color:#DAA520; transition:all 0.4s; font-size:28px;}
+	nav>ul>li:hover>a{transform:translateY(-20px); opacity:0.8;}
+	
+	nav>ul>li>div{position:absolute; left:0px; top:30px; width:500px; height:450px; border:1px solid #000;
+	box-sizing:border-box; opacity:0; transition:all 0.5s; padding:10px;}
+	nav>ul>li>a:hover +div{opacity:1; transform:rotateY(360deg);}
+	nav>ul>li>div>p {width:100%; height:350px; border:1px solid #333; box-sizing:border-box; overflow:hidden;}
+	nav>ul>li>div>p>img{width:100%;}
+	
+	nav>ul>li>div>h2{position:absolute; left:0px; width:100%; height:50px; line-height:50px; text-align:center; color:#FFBB00;}
+	
+	nav>ul>li>div>ul{width:100%; position:absolute; bottom:0px; left:0px;}
+	nav>ul>li>div>ul>li>a{display:block; width:100%; height:37px; bordr-top:1px solid #111; text-align:center; color:#FFBB00; transition:all 0.4s; font-size:20px;}
+	nav>ul>li>div>ul>li>a:hover{background:#DAA520; color:#fff;}
+	
+	.bg{width:100%; height:100%; background:url(img/p2/ballon22.png) no-repeat top center; opacity:0.5; position:absolute; top:400px; left:50%;  transform:translate(-50%,0);z-index:1;}
+	
+	.yg{width:950px; height:400px; position:absolute; top:900px; left:50%; transform:translate(-50%,0);}
+	footer{position:absolute; top:1300px; left:0; height:70px; width:100%; background-color:#999; }
+	footer p{text-align:center; line-height:70px; }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="prefixfree.min.js"></script>
+<script src="custom.js"></script>
+<script src="slick/slick.js"></script>
+<script>
+	$(function(){
+		$('.slider').slick({dots:true, infinite:true});
+		
+	function sh() {
+			var shHeight = $(document).height();
+			var shWidth = $(document).width();
+			
+			$('.sh').css({'width':shWidth, 'height':shHeight});
+			$('.sh').stop().fadeTo('slow',0.7);	
+			}
+		
+		$('.box1,.box2').on('mouseenter',function(){
+			sh();
+			});
+		
+		$('.box1,.box2').on('mouseleave',function(){
+			$('.sh').stop().fadeOut('slow')
+			});
+		
+	});
+</script>
+</head>
+
+<body>
+	<div class="sh"></div>
+    <h1><a href="#"><img src="img/p2/bbbb1.png" alt="로고"/> </a></h1>
+	<div class="slider">
+    	<div><img src="img/p2/modrich.jpg" width="250px" height="250px"></div>
+        <div><img src="img/p2/ronaldo.jpg" width="250px" height="250px"></div>
+        <div><img src="img/p2/grizman11.jpg" width="250px" height="250px"></div>
+     </div>
+    <header>
+        <ul>
+        	<li><a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook "></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram "></i></a></li>
+            <li><a href="http://www.youtube.com" target="_blank"><i class="fab fa-youtube "></i></a></li>
+        </ul>
+    </header>
+    
+    <nav>
+    	<ul>
+        	<li>
+            	<a href="#" class="box1">올해의 선수</a>
+                <div class="box2">
+                	<h2>올해의 베스트 일레븐</h2>
+                    <p><img src="img/p2/a2.png"></p>
+                    <ul>
+                    	<li><a href="#">발롱도르순위</a></li>
+                        <li><a href="#">핵심 선수들</a></li>
+                     </ul>
+                </div>
+            </li>
+            <li>
+            	<a href="#" class="box1">내가 뽑은 선수</a>
+                <div class="box2">
+                <h2>내가 좋아하는 선수는?</h2>
+                <p><img src="img/p2/a3.png"></p>
+                <ul>
+                    	<li><a href="#">호감가는선수</a></li>
+                        <li><a href="#">비난받는선수</a></li>
+                     </ul>
+                     </div>
+            </li>
+            <li >
+            	<a href="#" class="box1">선수 활약상</a>
+                <div class="box2">
+                <h2>선수 골모음</h2>
+                <p><img src="img/p2/a1.png"></p>
+                <ul>
+                		<li><a href="#">Goals</a></li>
+                        <li><a href="#">Have fun</a></li>
+                </ul>
+                </div>
+            </li>
+            <li>
+            	<a href="#" class="box1">고객센터</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="bg"></div>
+    <div class="yg">
+     <iframe width="950" height="400" src="https://www.youtube.com/embed/cuiw7DXIhck?mute=1&loop=1&autoplay=1" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <footer>
+    	<p>copyright all right reserved. &copy; ParkHyeonSeo</p>
+    </footer>
+</body>
+</html>
